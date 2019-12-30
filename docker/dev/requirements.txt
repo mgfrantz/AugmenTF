@@ -1,0 +1,6 @@
+ipython==7.0.0
+scikit-learn
+jupyterlab
+awswrangler
+tqdm
+fastprogress

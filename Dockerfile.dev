@@ -1,0 +1,31 @@
+FROM tensorflow/tensorflow:2.1.0rc2-py3-jupyter
+
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt-get update
+RUN apt-get install -y vim \
+		   emacs \
+		   nano \
+		   zip \
+		   unzip \
+		   git \
+		   default-jre \
+		   default-jdk \
+		   wget \
+		   cron \
+		   man \
+		   nodejs \
+		   libpq-dev \
+                   npm
+
+COPY docker/dev/requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+RUN jupyter labextension install --no-build @jupyter-widgets/jupyterlab-manager
+RUN jupyter labextension install --no-build @jupyterlab/toc
+
+RUN jupyter lab build
+
+ENV SHELL=/bin/bash
+
+CMD jupyter lab --ip=0.0.0.0 --allow-root

@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: AugmenTF-cpu
+    container_name: AugmenTF-cpu
+    volumes:
+      - ${VOLUME_PATH}:/tf/src
+    ports:
+      - 8888:8888
+      - 6006:6006
+    user: 502:20
