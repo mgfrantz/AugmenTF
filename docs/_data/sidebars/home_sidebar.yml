@@ -22,6 +22,9 @@ entries:
       title: Core functions
       url: /core
     - output: web,pdf
+      title: Basic train
+      url: /basic_train
+    - output: web,pdf
       title: Command line functions
       url: /cli
     output: web
