@@ -9,9 +9,12 @@ index = {"Path.ls": "00_core.ipynb",
          "write_text": "00_core.ipynb",
          "read_pickle": "00_core.ipynb",
          "write_pickle": "00_core.ipynb",
-         "apply_chained_funcs": "00_core.ipynb"}
+         "apply_chained_funcs": "00_core.ipynb",
+         "make_dataset_from_df": "01_basic_data.ipynb",
+         "make_dataset_from_csv": "01_basic_data.ipynb"}
 
-modules = ["core.py"]
+modules = ["core.py",
+           "basic_data.py"]
 
 git_url = "https://github.com/mgfrantz/AugmenTF/tree/master/"
 
