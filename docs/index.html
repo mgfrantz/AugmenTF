@@ -1,11 +1,11 @@
 ---
 
-title: Project name here
+title: AugmenTF
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Summary description here."
+summary: "A library inspired by [fast.ai](https://www.fast.ai/) to implement utilities and tools in TensorFlow 2."
 ---
 <!--
 
@@ -24,7 +24,26 @@ summary: "Summary description here."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This file will become your README and also the index of your documentation.</p>
+<p>Currently, there's great support for images, thus I'm tackilng text first.</p>
+<p>TODO:</p>
+<ul>
+<li>[ ] Dataloaders for text data<ul>
+<li>[ ] CSV loader</li>
+<li>[ ] Textfile loader</li>
+<li>[ ] Exporting as TFRecords</li>
+</ul>
+</li>
+<li>[ ] Preprocessing: tokenization and text preprocessing<ul>
+<li>[ ] dealing with punctuation, repetition, beginning / end of sentences</li>
+<li>[ ] wordpiece?</li>
+</ul>
+</li>
+<li>[ ] Vocabulary / embeddings augmentation for transfer learning</li>
+<li>[ ] One-cycle policy</li>
+<li>[ ] <a href="https://www.avanwyk.com/finding-a-learning-rate-in-tensorflow-2/">LR-Finder</a></li>
+<li>[ ] Discriminative learning rates and layer groups</li>
+<li>[ ] Saving history, plotting losses and metrics</li>
+</ul>
 
 </div>
 </div>
@@ -37,14 +56,14 @@ summary: "Summary description here."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install your_project_name</code></p>
+<p><code>pip install augmentf</code></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use">&#182;</a></h2>
+<h2 id="Usage">Usage<a class="anchor-link" href="#Usage">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -60,7 +79,7 @@ summary: "Summary description here."
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Make the library first!&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -72,12 +91,10 @@ summary: "Summary description here."
 
 <div class="output_area">
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Make the library first!
+</pre>
 </div>
-
 </div>
 
 </div>

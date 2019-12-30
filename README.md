@@ -8,35 +8,45 @@
 
 -->
 
-# Project name here
+# AugmenTF
 
-> Summary description here.
+> A library inspired by [fast.ai](https://www.fast.ai/) to implement utilities and tools in TensorFlow 2.
 
 
-This file will become your README and also the index of your documentation.
+Currently, there's great support for images, thus I'm tackilng text first.
+
+TODO:
+* [ ] Dataloaders for text data
+  * [ ] CSV loader
+  * [ ] Textfile loader
+  * [ ] Exporting as TFRecords
+* [ ] Preprocessing: tokenization and text preprocessing
+  * [ ] dealing with punctuation, repetition, beginning / end of sentences
+  * [ ] wordpiece?
+* [ ] Vocabulary / embeddings augmentation for transfer learning
+* [ ] One-cycle policy
+* [ ] [LR-Finder](https://www.avanwyk.com/finding-a-learning-rate-in-tensorflow-2/)
+* [ ] Discriminative learning rates and layer groups
+* [ ] Saving history, plotting losses and metrics
 
 ## Install
 
-`pip install your_project_name`
+`pip install augmentf`
 
-## How to use
+## Usage
 
 Fill me in please! Don't forget code examples:
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
 ```python
-1+1
+print("Make the library first!")
 ```
 
 </div>
 <div class="output_area" markdown="1">
 
-
-
-
-    2
-
+    Make the library first!
 
 
 </div>
