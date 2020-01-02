@@ -12,6 +12,12 @@ entries:
     - output: web,pdf
       title: Basic Data
       url: /basic_data
+    - output: web
+      subfolders:
+      - output: web,pdf
+        title: Text Preprocessing
+        url: /text_preprocessing
+      title: Text
     output: web
     title: Modules
   output: web
