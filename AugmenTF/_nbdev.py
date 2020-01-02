@@ -31,11 +31,23 @@ index = {"Path.ls": "00_core.ipynb",
          "TK_UP": "02_text_preprocessing.ipynb",
          "TK_REP": "02_text_preprocessing.ipynb",
          "TK_WREP": "02_text_preprocessing.ipynb",
-         "STEPS": "02_text_preprocessing.ipynb"}
+         "STEPS": "02_text_preprocessing.ipynb",
+         "BaseTokenizer": "02_text_preprocessing.ipynb",
+         "SpacyTokenizer": "02_text_preprocessing.ipynb",
+         "SentencePieceTokenizer": "02_text_preprocessing.ipynb",
+         "CosineLRScheduler": "03_keras_callbacks.ipynb",
+         "BatchHistory": "03_keras_callbacks.ipynb",
+         "PerformanceThreshold": "03_keras_callbacks.ipynb",
+         "get_callbacks": "03_keras_callbacks.ipynb",
+         "LRFinder": "03_keras_callbacks.ipynb",
+         "get_checkpoint_callback": "03_keras_callbacks.ipynb",
+         "tboard": "03_keras_callbacks.ipynb",
+         "early_stopper": "03_keras_callbacks.ipynb"}
 
 modules = ["core.py",
            "basic_data.py",
-           "text/text_preprocessing.py"]
+           "text/text_preprocessing.py",
+           "keras_callbacks.py"]
 
 git_url = "https://github.com/mgfrantz/AugmenTF/tree/master/"
 

@@ -2,7 +2,7 @@
 
 __all__ = ['spec_add_spaces', 'separate_punctuation', 'rm_useless_spaces', 'replace_rep', 'replace_wrep', 'fix_html',
            'replace_all_caps', 'deal_caps', 'fix_ascii', 'preprocess_text', 'BOS', 'EOS', 'FLD', 'UNK', 'PAD', 'TK_MAJ',
-           'TK_UP', 'TK_REP', 'TK_WREP', 'STEPS']
+           'TK_UP', 'TK_REP', 'TK_WREP', 'STEPS', 'BaseTokenizer', 'SpacyTokenizer', 'SentencePieceTokenizer']
 
 # Cell
 from ..core import *
@@ -13,6 +13,9 @@ import tensorflow as tf
 import re
 import html
 from string import punctuation
+import spacy
+from spacy.symbols import ORTH
+import sentencepiece as sps
 
 # Cell
 
@@ -120,3 +123,28 @@ def preprocess_text(string, funcs=STEPS):
     string, text that's been processed by funcs.
     '''
     return apply_chained_funcs(string, funcs).strip()
+
+# Cell
+class BaseTokenizer():
+    "Basic class for a tokenizer function."
+    def __init__(self, lang):
+        self.lang = lang
+    def tokenizer(self, t):
+        return t.split(' ')
+    def add_special_cases(self, toks):
+        pass
+
+class SpacyTokenizer(BaseTokenizer):
+    "Wrapper around a spacy tokenizer to make it a `BaseTokenizer`."
+    def __init__(self, lang):
+        self.tok = spacy.blank(lang, disable=["parser","tagger","ner"])
+
+    def tokenizer(self, t):
+        return [t.text for t in self.tok.tokenizer(t)]
+
+    def add_special_cases(self, tokens):
+        for w in tokens:
+            self.tok.tokenizer.add_special_case(w, [{ORTH: w}])
+
+class SentencePieceTokenizer():
+    pass
