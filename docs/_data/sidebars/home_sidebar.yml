@@ -7,18 +7,18 @@ entries:
 - folders:
   - folderitems:
     - output: web,pdf
-      title: Core functions
+      title: Overview
+      url: /
+    - output: web,pdf
+      title: Core
       url: /core
     - output: web,pdf
       title: Basic Data
       url: /basic_data
-    - output: web
-      subfolders:
-      - output: web,pdf
-        title: Text Preprocessing
-        url: /text_preprocessing
-      title: Text
+    - output: web,pdf
+      title: Text Preprocessing
+      url: /text_preprocessing
     output: web
-    title: Modules
+    title: AugmenTF
   output: web
   title: Sidebar

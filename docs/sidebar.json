@@ -1,9 +1,8 @@
 {
-  "Modules": {
-    "Core functions": "/core",
+  "AugmenTF": {
+    "Overview": "/",
+    "Core": "/core",
     "Basic Data": "/basic_data",
-    "Text": {
-        "Text Preprocessing": "/text_preprocessing"
-    }
+    "Text Preprocessing": "/text_preprocessing"
   }
 }
