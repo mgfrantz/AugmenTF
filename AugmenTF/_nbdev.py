@@ -11,10 +11,31 @@ index = {"Path.ls": "00_core.ipynb",
          "write_pickle": "00_core.ipynb",
          "apply_chained_funcs": "00_core.ipynb",
          "make_dataset_from_df": "01_basic_data.ipynb",
-         "make_dataset_from_csv": "01_basic_data.ipynb"}
+         "make_dataset_from_csv": "01_basic_data.ipynb",
+         "spec_add_spaces": "02_text_preprocessing.ipynb",
+         "separate_punctuation": "02_text_preprocessing.ipynb",
+         "rm_useless_spaces": "02_text_preprocessing.ipynb",
+         "replace_rep": "02_text_preprocessing.ipynb",
+         "replace_wrep": "02_text_preprocessing.ipynb",
+         "fix_html": "02_text_preprocessing.ipynb",
+         "replace_all_caps": "02_text_preprocessing.ipynb",
+         "deal_caps": "02_text_preprocessing.ipynb",
+         "fix_ascii": "02_text_preprocessing.ipynb",
+         "preprocess_text": "02_text_preprocessing.ipynb",
+         "BOS": "02_text_preprocessing.ipynb",
+         "EOS": "02_text_preprocessing.ipynb",
+         "FLD": "02_text_preprocessing.ipynb",
+         "UNK": "02_text_preprocessing.ipynb",
+         "PAD": "02_text_preprocessing.ipynb",
+         "TK_MAJ": "02_text_preprocessing.ipynb",
+         "TK_UP": "02_text_preprocessing.ipynb",
+         "TK_REP": "02_text_preprocessing.ipynb",
+         "TK_WREP": "02_text_preprocessing.ipynb",
+         "STEPS": "02_text_preprocessing.ipynb"}
 
 modules = ["core.py",
-           "basic_data.py"]
+           "basic_data.py",
+           "text/text_preprocessing.py"]
 
 git_url = "https://github.com/mgfrantz/AugmenTF/tree/master/"
 

@@ -21,6 +21,20 @@ summary: "This module is for basic datasets to be used by models."
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>WARNING:tensorflow:Falling back to tensorflow client, its recommended to install the cloud tpu client directly with pip install cloud-tpu-client .
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -48,7 +62,7 @@ summary: "This module is for basic datasets to be used by models."
 
 <span class="n">news</span> <span class="o">=</span> <span class="n">fetch_20newsgroups</span><span class="p">()</span>
 
-<span class="n">texts</span> <span class="o">=</span> <span class="n">news</span><span class="o">.</span><span class="n">data</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">news</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">news</span><span class="o">.</span><span class="n">target</span>
 
 <span class="n">textdata_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">labels</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span><span class="s1">&#39;labels&#39;</span><span class="p">])</span>
@@ -271,7 +285,7 @@ summary: "This module is for basic datasets to be used by models."
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">batch</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">batch</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -286,9 +300,7 @@ summary: "This module is for basic datasets to be used by models."
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([b&#39;From: brian@meaddata.com (Brian Curran)\nSubject: Re: I\&#39;ve found the secret!\nOrganization: Mead Data Central, Dayton OH\nLines: 19\nDistribution: world\nNNTP-Posting-Host: taurus.meaddata.com\n\nIn article &lt;1993Apr15.161730.9903@cs.cornell.edu&gt;, tedward@cs.cornell.edu (Edward [Ted] Fischer) writes:\n|&gt; \n|&gt; Why are the Red Sox in first place?  Eight games into the season, they\n|&gt; already have two wins each from Clemens and Viola.  Clemens starts\n|&gt; again tonight, on three days rest.\n\nHuh?  Clemens pitched last on Saturday, giving him his usual four days\nrest.  \n\n|&gt; What\&#39;s up?  Are the Sox going with a four-man rotation?  Is this why\n|&gt; Hesketh was used in relief last night?\n-- \n------------------------------------------------------------------------------\nBrian Curran                 Mead Data Central              brian@meaddata.com \n------------------------------------------------------------------------------\n            &#34;I didn\&#39;t think I should\&#39;ve been asked to catch\n                 when the temperature was below my age.&#34;\n               - Carlton Fisk, Chicago White Sox catcher, \n              on playing during a 40-degree April ball game\n&#39;,
-       b&#39;From: dchhabra@stpl.ists.ca (Deepak Chhabra)\nSubject: Re: Goalie masks\nNntp-Posting-Host: stpl.ists.ca\nOrganization: Solar Terresterial Physics Laboratory, ISTS\nLines: 21\n\nIn article &lt;120666@netnews.upenn.edu&gt; kkeller@mail.sas.upenn.edu (Keith Keller) writes:\n&gt;My vote goes to John Vanbiesbrouck.  His mask has a skyline of New York\n&gt;City, and on the sides there are a bunch of bees (Beezer).  It looks\n&gt;really sharp.\n\nFunny you should mention this; one time on HNIC Don Cherry pointed out\nVanbiesbrouck\&#39;s mask.  He _hated_ it.  I think he said something to the effect\nof:\n&#34;You see?  He was great last year; now he goes out and gets that dopey mask \nand he can\&#39;t stop a beachball!&#34;\n\nYou may or may not take Cherry seriously at all, but I cracked up when I heard\nit.\n\nI think Ed Belfour has the current best mask in the NHL btw.  I also like\nMoog\&#39;s, and I\&#39;ll give Fuhr\&#39;s new one an honourable mention, although I haven\&#39;t\nseen it closely yet (it looked good from a distance!).  What\&#39;s also neat is\nChevaldae\&#39;s in Detroit; they call him &#34;Chevy&#34; so he has two checkered flags\npainted at the top as in an auto race.\n\n\n&#39;],
-      dtype=object)</pre>
+<pre>b&#34;From: cramer@optilink.COM (Clayton Cramer)\nSubject: Re: New Study Out On Gay Percentage\nOrganization: Optilink Corporation, Petaluma, CA\nLines: 31\n\nIn article &lt;1993Apr16.164638.27218@galileo.cc.rochester.edu&gt;, as010b@uhura.cc.rochester.edu (Tree of Schnopia) writes:\n&gt; In &lt;15378@optilink.COM&gt; cramer@optilink.COM (Clayton Cramer) writes:\n# #The article also contains numbers on the number of sexual partners.\n# #The median number of sexual partners for all men 20-39 was 7.3.\n# #Compared to the table I have already posted from Masters, Johnson,\n# #and Kolodny showing male homosexual partners, it is apparent that\n# #homosexual men are dramatically more promiscuous than the general\n# #male population.  It&#39;s a shame that we don&#39;t have a breakdown for\n# #straight men vs. gay/bi men -- that would show even more dramatically\n# #how much more promiscuous gay/bi men are.\n# \n# Possibly because gay/bi men are less likely to get married?\n\nMarriage isn&#39;t a requirement for a couple staying together.\n\n# What was the purpose of this post?  If it was to show a mindless obsession\n# with statistics, an incredibly flawed system of reasoning, and a repellent\n# hatemonger agenda, then the purpose was accomplished with panache.\n# \n# (a) Get a clue.  (b) Get a life.  (c) Get out of my face.  I&#39;m not in yours.\n# \n# ----bi    Andrew D. Simchik\t\t\t\t\tSCHNOPIA!\n\nYes you are.  When you and the rest of the homosexual community\npass laws to impose your moral codes on me, by requiring me to\nhire, rent to, or otherwise associate with a homosexual against\nmy will, yes, you are in my face.  Until homosexuals stop trying\nto impose their morals on me, I will be in your face about this.\n-- \nClayton E. Cramer {uunet,pyramid}!optilink!cramer  My opinions, all mine!\nRelations between people to be by mutual consent, or not at all.\n&#34;</pre>
 </div>
 
 </div>
@@ -317,7 +329,7 @@ summary: "This module is for basic datasets to be used by models."
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 9, 10], dtype=int32)</pre>
+<pre>array([18,  0], dtype=int32)</pre>
 </div>
 
 </div>
@@ -466,8 +478,8 @@ summary: "This module is for basic datasets to be used by models."
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([b&#34;From: wil@shell.portal.com (Ville V Walveranta)\nSubject: Re: Fall Comdex &#39;93\nNntp-Posting-Host: jobe\nOrganization: Portal Communications Company\nX-Newsreader: TIN [version 1.1 PL8]\nLines: 20\n\nDLS128@psuvm.psu.edu wrote:\n: Does anyone out there have any info on the up and coming fall comdex &#39;93? I was\n: asked by one of my peers to get any info that might be available.  Or, could\n: anyone point me in the right direction?  Any help would be appreciated.\n\n\tIt&#39;s in Las Vegas (as always) between November 16th and 20th.\n \n\tFor more information contact: The Interface Group\n\t\t\t\t      300 First Avenue\n\t\t\t\t      Needham, MA  02194-2722\n\n\tSorry, no phone number available. Consult directory service\n\tin Massachusetts for the number (617, 508 or 413).\n\n\t-- Willy\n--\n   *    Ville V. Walveranta      Tel./Fax....: (510) 420-0729     ****\n   **   96 Linda Ave., Apt. #5   From Finland: 990-1-510-420-0729  ***\n   ***  Oakland, CA  94611-4838  (FAXes automatically recognized)   **\n   **** USA                      Email.......: wil@shell.portal.com  *\n&#34;,
-       b&#34;From: nicho@vnet.IBM.COM (Greg Stewart-Nicholls)\nSubject: Re: Biosphere II\nReply-To: nicho@vnet.ibm.com\nDisclaimer: This posting represents the poster&#39;s views, not those of IBM\nNews-Software: UReply 3.1\nX-X-From: nicho@vnet.ibm.com\n            &lt;1q1kia$gg8@access.digex.net&gt;\nLines: 18\n\nIn &lt;1q1kia$gg8@access.digex.net&gt; Pat writes:\n&gt;In article &lt;19930408.043740.516@almaden.ibm.com&gt; nicho@vnet.ibm.com writes:\n&gt;&gt;In &lt;1q09ud$ji0@access.digex.net&gt; Pat writes:\n&gt;&gt;&gt;Why is everyone being so critical of B2?\n&gt;&gt; Because it&#39;s bogus science, promoted as &#39;real&#39; science.\n&gt;It seems to me, that it&#39;s sorta a large engineering project more\n&gt;then a science project.\n  Bingo.\n&gt;B2 is not bench science,  but rather a large scale attempt to\n&gt;re-create a series of micro-ecologies.   what&#39;s so eveil about this?\n Nothing evil at all. There&#39;s no actual harm in what they&#39;re doing, only\nhow they represent it.\n\n -----------------------------------------------------------------\n .sig files are like strings ... every yo-yo&#39;s got one.\n\nGreg Nicholls ... nicho@vnet.ibm.com (business) or\n                  nicho@olympus.demon.co.uk (private)\n&#34;],
+<pre>array([b&#34;From: tmc@spartan.ac.BrockU.CA (Tim Ciceran)\nSubject: Re: Hijaak\nOrganization: Brock University, St. Catharines Ontario\nX-Newsreader: TIN [version 1.1 PL9]\nLines: 15\n\nHaston, Donald Wayne (haston@utkvx.utk.edu) wrote:\n: Currently, I use a shareware program called Graphics Workshop.\n: What kinds of things will Hijaak do that these shareware programs\n: will not do?\n\nI also use Graphic Workshop and the only differences that I know of are that\nHijaak has screen capture capabilities and acn convert to/from a couple of\nmore file formats (don&#39;t know specifically which one).  In the April 13\nissue of PC Magazine they test the twelve best selling image capture/convert\nutilities, including Hijaak.\n\nTMC.\n(tmc@spartan.ac.brocku.ca)\n\n\n&#34;,
+       b&#39;From: dpeterik@iastate.edu (Dan Peterik)\nSubject: Re: Brewer Notes\nOrganization: Iowa State University, Ames IA\nLines: 26\n\nIn &lt;30MAR93.02086551.0010@MUSIC.LIB.MATC.EDU&gt; PFAN &lt;PFAN@MUSIC.LIB.MATC.EDU&gt; writes:\n\n&gt;For those of you who know who Bernie Brewer is, he\&#39;s back.  The\n&gt;team mascot, if you will, was given his walking papers a few years\n&gt;ago, but the fans voted him back last season and he will be perched\n&gt;in the his familiar home in the outfield and will again slide down\n&gt;into a barrel of beer when home runs are hit.\n\nThat is great to hear I just may have to take a raod trip to Milwakee this year and see that again.  Last time I saw Bernie Brewer was at the age of 10 and I am now 21 thanks for this post.\n\n&gt;One final note, Bill Spiers is leading the Brewers with 13 RBI\&#39;s in\n&gt;exhibition play.  Looks like he\&#39;s bouncing back nicely from back\n&gt;problems.\n\nGood to Bill is getting better form the limited coverage we get here in Iowa\nI know that this will be a great season for the BREW CREW!!\n\n\n&gt;/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\n&gt;| Pete Fanning, Computer Operator  | &#34;Leadership is ACTION |\n&gt;| Office of Information Technology |  ...NOT Position&#34;     |\n&gt;| Milwaukee Area Technical College |     -- D. H. McGannon |\n&gt;|**********************************************************|\n&gt;| Email: pfan@music.lib.matc.edu (Internet)                |\n&gt;|  -or-  Pete.Fanning@f71.n154.z1.fidonet.org              |\n&gt;\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\n&#39;],
       dtype=object)</pre>
 </div>
 
@@ -497,7 +509,7 @@ summary: "This module is for basic datasets to be used by models."
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 2, 14], dtype=int32)</pre>
+<pre>array([1, 9], dtype=int32)</pre>
 </div>
 
 </div>
