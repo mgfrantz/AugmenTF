@@ -16,14 +16,14 @@ import warnings
 
 # Cell
 class CosineLRScheduler(Callback):
-    """Learning rate scheduler that makes updates each batch. Built-in
+    """```Learning rate scheduler that makes updates each batch. Built-in
     Keras version only updates once per epoch.
-    """
+    ```"""
 
     def __init__(self, max_lr, epochs, iters_per_epoch, warm=0.3,
                  restarts=False, cycle_len=5, cycle_decay=0.0, min_lr=None,
                  verbose=False):
-        """
+        """```
         Parameters
         ----------
         max_lr: float
@@ -58,7 +58,7 @@ class CosineLRScheduler(Callback):
         min_lr: float
             Minimum learning rate. If None is specified, it will be set
             to max_lr / 25.
-        """
+        ```"""
         super().__init__()
         self.max_lr = max_lr
         self.min_lr = min_lr or max_lr / 25
@@ -191,10 +191,10 @@ class CosineLRScheduler(Callback):
 
 # Cell
 class BatchHistory(Callback):
-    """Callback to store training loss at each mini batch. Built in
+    """```Callback to store training loss at each mini batch. Built in
     history callback only stores epoch losses. Validation set is only
     evaluated at the end of each epoch so it's not included here.
-    """
+    ```"""
 
     def __init__(self, path):
         super().__init__()
@@ -232,7 +232,7 @@ class PerformanceThreshold(Callback):
     """
 
     def __init__(self, metric='val_loss', threshold=1.0, goal='min'):
-        """
+        """```
         Parameters
         ----------
         metric: str
@@ -246,7 +246,7 @@ class PerformanceThreshold(Callback):
         goal: str
             Goal of the quantity being monitored (i.e. are we trying to
             minimize metric or maximize it?). One of ('max', 'min').
-        """
+        ```"""
         super().__init__()
         assert goal in ('max', 'min')
 
@@ -268,7 +268,7 @@ class PerformanceThreshold(Callback):
 # Cell
 def get_callbacks(prefix, stopping_patience=4, max_loss=1.0,
                   monitor='val_loss', tensorboard=False, sched=False, v=3):
-    """Get a list of callbacks.
+    """```Get a list of callbacks.
 
     Parameters
     ----------
@@ -296,7 +296,7 @@ def get_callbacks(prefix, stopping_patience=4, max_loss=1.0,
         When compiling model, pass in list(callbacks.keys()). Returning a dict
         allows us to access specific callbacks more easily, since indices
         will vary depending on which callbacks are used.
-    """
+    ```"""
     log_dir = os.path.join(f'logs_v{v}', prefix)
 
     checkpointer = ModelCheckpoint(
@@ -321,7 +321,7 @@ def get_callbacks(prefix, stopping_patience=4, max_loss=1.0,
 
 # Cell
 class LRFinder:
-    """
+    """```
     Plots the change of the loss function of a Keras model when the learning rate is exponentially increasing.
     See for details:
     https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0
@@ -329,17 +329,14 @@ class LRFinder:
     The following code is attributed to https://github.com/surmenok/keras_lr_finder
 
     Usage:
-
+    ```
     # model is a Keras model
     lr_finder = LRFinder(model)
 
     # Train a model with batch size 512 for 5 epochs
     # with learning rate growing exponentially from 0.0001 to 1
     lr_finder.find(x_train, y_train, start_lr=0.0001, end_lr=1, batch_size=512, epochs=5)
-
-
-
-    """
+    ```"""
 
     def __init__(self, model):
         self.model = model

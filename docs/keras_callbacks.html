@@ -66,8 +66,8 @@ summary: "Custom callbacks for the Keras library."
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="CosineLRScheduler" class="doc_header"><code>class</code> <code>CosineLRScheduler</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/keras_callbacks.py#L18" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CosineLRScheduler</code>(<strong><code>max_lr</code></strong>, <strong><code>epochs</code></strong>, <strong><code>iters_per_epoch</code></strong>, <strong><code>warm</code></strong>=<em><code>0.3</code></em>, <strong><code>restarts</code></strong>=<em><code>False</code></em>, <strong><code>cycle_len</code></strong>=<em><code>5</code></em>, <strong><code>cycle_decay</code></strong>=<em><code>0.0</code></em>, <strong><code>min_lr</code></strong>=<em><code>None</code></em>, <strong><code>verbose</code></strong>=<em><code>False</code></em>) :: <code>Callback</code></p>
 </blockquote>
-<p>Learning rate scheduler that makes updates each batch. Built-in
-Keras version only updates once per epoch.</p>
+<p><code>Learning rate scheduler that makes updates each batch. Built-in
+Keras version only updates once per epoch.</code></p>
 
 </div>
 
@@ -226,9 +226,9 @@ Keras version only updates once per epoch.</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="BatchHistory" class="doc_header"><code>class</code> <code>BatchHistory</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/keras_callbacks.py#L193" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BatchHistory</code>(<strong><code>path</code></strong>) :: <code>Callback</code></p>
 </blockquote>
-<p>Callback to store training loss at each mini batch. Built in
+<p><code>Callback to store training loss at each mini batch. Built in
 history callback only stores epoch losses. Validation set is only
-evaluated at the end of each epoch so it's not included here.</p>
+evaluated at the end of each epoch so it's not included here.</code></p>
 
 </div>
 
@@ -279,7 +279,7 @@ and validation BCE loss has ballooned to &gt;2.0 on a balanced dataset.</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_callbacks" class="doc_header"><code>get_callbacks</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/keras_callbacks.py#L269" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_callbacks</code>(<strong><code>prefix</code></strong>, <strong><code>stopping_patience</code></strong>=<em><code>4</code></em>, <strong><code>max_loss</code></strong>=<em><code>1.0</code></em>, <strong><code>monitor</code></strong>=<em><code>'val_loss'</code></em>, <strong><code>tensorboard</code></strong>=<em><code>False</code></em>, <strong><code>sched</code></strong>=<em><code>False</code></em>, <strong><code>v</code></strong>=<em><code>3</code></em>)</p>
 </blockquote>
-<p>Get a list of callbacks.</p>
+<p>```Get a list of callbacks.</p>
 <h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">&#182;</a></h2><p>prefix: str
     Name used to identify this run of training. Ex: v2_e3, meaning
     MobileNet v2, experiment 3.
@@ -300,7 +300,8 @@ v: int
 <h2 id="Returns">Returns<a class="anchor-link" href="#Returns">&#182;</a></h2><p>dict[str, tensorflow.python.keras.callbacks]: Map callback name to callback.
     When compiling model, pass in list(callbacks.keys()). Returning a dict
     allows us to access specific callbacks more easily, since indices
-    will vary depending on which callbacks are used.</p>
+    will vary depending on which callbacks are used.
+```</p>
 
 </div>
 
@@ -324,13 +325,17 @@ v: int
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="LRFinder" class="doc_header"><code>class</code> <code>LRFinder</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/keras_callbacks.py#L323" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>LRFinder</code>(<strong><code>model</code></strong>)</p>
 </blockquote>
-<p>Plots the change of the loss function of a Keras model when the learning rate is exponentially increasing.
+
+<pre><code>Plots the change of the loss function of a Keras model when the learning rate is exponentially increasing.
 See for details:
-<a href="https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0">https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0</a></p>
-<p>The following code is attributed to <a href="https://github.com/surmenok/keras_lr_finder">https://github.com/surmenok/keras_lr_finder</a></p>
-<p>Usage:</p>
+https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0
+
+The following code is attributed to https://github.com/surmenok/keras_lr_finder
+
+Usage:</code></pre>
 <h1 id="model-is-a-Keras-model">model is a Keras model<a class="anchor-link" href="#model-is-a-Keras-model">&#182;</a></h1><p>lr_finder = LRFinder(model)</p>
-<h1 id="Train-a-model-with-batch-size-512-for-5-epochs">Train a model with batch size 512 for 5 epochs<a class="anchor-link" href="#Train-a-model-with-batch-size-512-for-5-epochs">&#182;</a></h1><h1 id="with-learning-rate-growing-exponentially-from-0.0001-to-1">with learning rate growing exponentially from 0.0001 to 1<a class="anchor-link" href="#with-learning-rate-growing-exponentially-from-0.0001-to-1">&#182;</a></h1><p>lr_finder.find(x_train, y_train, start_lr=0.0001, end_lr=1, batch_size=512, epochs=5)</p>
+<h1 id="Train-a-model-with-batch-size-512-for-5-epochs">Train a model with batch size 512 for 5 epochs<a class="anchor-link" href="#Train-a-model-with-batch-size-512-for-5-epochs">&#182;</a></h1><h1 id="with-learning-rate-growing-exponentially-from-0.0001-to-1">with learning rate growing exponentially from 0.0001 to 1<a class="anchor-link" href="#with-learning-rate-growing-exponentially-from-0.0001-to-1">&#182;</a></h1><p>lr_finder.find(x_train, y_train, start_lr=0.0001, end_lr=1, batch_size=512, epochs=5)
+```</p>
 
 </div>
 
