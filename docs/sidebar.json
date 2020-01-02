@@ -1,6 +1,9 @@
 {
   "Modules": {
     "Core functions": "/core",
-    "Basic Data": "/basic_data"
+    "Basic Data": "/basic_data",
+    "Text": {
+        "Text Preprocessing": "/text_preprocessing"
+    }
   }
 }
