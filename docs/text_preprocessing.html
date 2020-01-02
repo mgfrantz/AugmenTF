@@ -240,7 +240,7 @@ summary: "Module for preprocessing text. "
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="preprocess_text" class="doc_header"><code>preprocess_text</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/text/text_preprocessing.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>preprocess_text</code>(<strong><code>string</code></strong>, <strong><code>funcs</code></strong>=<em><code>[&lt;function fix_html at 0x147f78950&gt;, &lt;function replace_rep at 0x147f78840&gt;, &lt;function replace_wrep at 0x147f788c8&gt;, &lt;function separate_punctuation at 0x147f741e0&gt;, &lt;function rm_useless_spaces at 0x147f787b8&gt;, &lt;function replace_all_caps at 0x147f789d8&gt;, &lt;function deal_caps at 0x147f78a60&gt;]</code></em>)</p>
+<h4 id="preprocess_text" class="doc_header"><code>preprocess_text</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/text/text_preprocessing.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>preprocess_text</code>(<strong><code>string</code></strong>, <strong><code>funcs</code></strong>=<em><code>[&lt;function fix_html at 0x145224950&gt;, &lt;function replace_rep at 0x145224840&gt;, &lt;function replace_wrep at 0x1452248c8&gt;, &lt;function separate_punctuation at 0x1452201e0&gt;, &lt;function rm_useless_spaces at 0x1452247b8&gt;, &lt;function replace_all_caps at 0x1452249d8&gt;, &lt;function deal_caps at 0x145224a60&gt;]</code></em>)</p>
 </blockquote>
 <p>General function for cleaning text.
 Applites functions in order to a string.</p>
@@ -361,16 +361,6 @@ funcs: list, series of ordered functions you'd like to apply to string.</p>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Blockers:</p>
-<ul>
-<li>regex does not support backreferences. This prevents implementation of some core functionality as a tf.function.</li>
-</ul>
-
-</div>
-</div>
 </div>
 </div>
  
