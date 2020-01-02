@@ -40,7 +40,7 @@ Fill me in please! Don't forget code examples:
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
-```python
+```
 print("Make the library first!")
 ```
 
