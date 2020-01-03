@@ -38,11 +38,7 @@ index = {"Path.ls": "00_core.ipynb",
          "CosineLRScheduler": "03_keras_callbacks.ipynb",
          "BatchHistory": "03_keras_callbacks.ipynb",
          "PerformanceThreshold": "03_keras_callbacks.ipynb",
-         "get_callbacks": "03_keras_callbacks.ipynb",
-         "LRFinder": "03_keras_callbacks.ipynb",
-         "get_checkpoint_callback": "03_keras_callbacks.ipynb",
-         "tboard": "03_keras_callbacks.ipynb",
-         "early_stopper": "03_keras_callbacks.ipynb"}
+         "LRFinder": "03_keras_callbacks.ipynb"}
 
 modules = ["core.py",
            "basic_data.py",
