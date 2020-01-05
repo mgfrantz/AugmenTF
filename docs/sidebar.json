@@ -4,6 +4,7 @@
     "Core": "/core",
     "Basic Data": "/basic_data",
     "Text Preprocessing": "/text_preprocessing",
-    "Keras Callbacks": "/keras_callbacks"
+    "Keras Callbacks": "/keras_callbacks",
+    "Dask Datasets": "/dask_dataset"
   }
 }

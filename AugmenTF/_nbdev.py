@@ -38,12 +38,16 @@ index = {"Path.ls": "00_core.ipynb",
          "CosineLRScheduler": "03_keras_callbacks.ipynb",
          "BatchHistory": "03_keras_callbacks.ipynb",
          "PerformanceThreshold": "03_keras_callbacks.ipynb",
-         "LRFinder": "03_keras_callbacks.ipynb"}
+         "LRFinder": "03_keras_callbacks.ipynb",
+         "TYPE_MAPPING": "04_dask_dataset.ipynb",
+         "DaskDataset": "04_dask_dataset.ipynb",
+         "make_random_splits": "04_dask_dataset.ipynb"}
 
 modules = ["core.py",
            "basic_data.py",
            "text/text_preprocessing.py",
-           "keras_callbacks.py"]
+           "keras_callbacks.py",
+           "dask_dataset.py"]
 
 git_url = "https://github.com/mgfrantz/AugmenTF/tree/master/"
 

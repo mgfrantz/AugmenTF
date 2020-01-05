@@ -240,7 +240,7 @@ summary: "Module for preprocessing text. "
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="preprocess_text" class="doc_header"><code>preprocess_text</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/text/text_preprocessing.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>preprocess_text</code>(<strong><code>string</code></strong>, <strong><code>funcs</code></strong>=<em><code>[&lt;function fix_html at 0x146bc29d8&gt;, &lt;function replace_rep at 0x146bc28c8&gt;, &lt;function replace_wrep at 0x146bc2950&gt;, &lt;function separate_punctuation at 0x146bbe268&gt;, &lt;function rm_useless_spaces at 0x146bc2840&gt;, &lt;function replace_all_caps at 0x146bc2a60&gt;, &lt;function deal_caps at 0x146bc2ae8&gt;]</code></em>)</p>
+<h4 id="preprocess_text" class="doc_header"><code>preprocess_text</code><a href="https://github.com/mgfrantz/AugmenTF/tree/master/AugmenTF/text/text_preprocessing.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>preprocess_text</code>(<strong><code>string</code></strong>, <strong><code>funcs</code></strong>=<em><code>[&lt;function fix_html at 0x147c8c1e0&gt;, &lt;function replace_rep at 0x147c8c0d0&gt;, &lt;function replace_wrep at 0x147c8c158&gt;, &lt;function separate_punctuation at 0x147c759d8&gt;, &lt;function rm_useless_spaces at 0x147c8c048&gt;, &lt;function replace_all_caps at 0x147c8c268&gt;, &lt;function deal_caps at 0x147c8c2f0&gt;]</code></em>)</p>
 </blockquote>
 <p>General function for cleaning text.
 Applites functions in order to a string.</p>
@@ -358,6 +358,48 @@ funcs: list, series of ordered functions you'd like to apply to string.</p>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># def get_default_size(texts, max_vocab_sz):</span>
+<span class="c1">#     &quot;Either max_vocab_sz or one quarter of the number of unique words in `texts`&quot;</span>
+<span class="c1">#     cnt = Counter()</span>
+<span class="c1">#     for t in texts: </span>
+<span class="c1">#         cnt.update(t.split())</span>
+<span class="c1">#         if len(cnt)//4 &gt; max_vocab_sz: return max_vocab_sz</span>
+<span class="c1">#     res = len(cnt)//4</span>
+<span class="c1">#     while res%8 != 0: res+=1</span>
+<span class="c1">#     return res</span>
+
+<span class="c1"># def train_sentencepiece(texts:Collection[str], path:PathOrStr, pre_rules: ListRules=None, post_rules:ListRules=None, </span>
+<span class="c1">#     vocab_sz:int=None, max_vocab_sz:int=30000, model_type:str=&#39;unigram&#39;, max_sentence_len:int=20480, lang=&#39;en&#39;,</span>
+<span class="c1">#     char_coverage=None, tmp_dir=&#39;tmp&#39;, enc=&#39;utf8&#39;):</span>
+<span class="c1">#     &quot;Train a sentencepiece tokenizer on `texts` and save it in `path/tmp_dir`&quot;</span>
+<span class="c1">#     from sentencepiece import SentencePieceTrainer</span>
+<span class="c1">#     cache_dir = Path(path)/tmp_dir</span>
+<span class="c1">#     os.makedirs(cache_dir, exist_ok=True)</span>
+<span class="c1">#     if vocab_sz is None: vocab_sz=get_default_size(texts, max_vocab_sz)</span>
+<span class="c1">#     raw_text_path = cache_dir / &#39;all_text.out&#39;</span>
+<span class="c1">#     with open(raw_text_path, &#39;w&#39;, encoding=enc) as f: f.write(&quot;\n&quot;.join(texts))</span>
+<span class="c1">#     spec_tokens = [&#39;\u2581&#39;+s for s in defaults.text_spec_tok]</span>
+<span class="c1">#     cache_dir = cache_dir/&#39;spm&#39;</span>
+<span class="c1">#     SentencePieceTrainer.Train(&quot; &quot;.join([</span>
+<span class="c1">#         f&quot;--input={raw_text_path} --max_sentence_length={max_sentence_len}&quot;,</span>
+<span class="c1">#         f&quot;--character_coverage={ifnone(char_coverage, 0.99999 if lang in full_char_coverage_langs else 0.9998)}&quot;,</span>
+<span class="c1">#         f&quot;--unk_id={len(defaults.text_spec_tok)} --pad_id=-1 --bos_id=-1 --eos_id=-1&quot;,</span>
+<span class="c1">#         f&quot;--user_defined_symbols={&#39;,&#39;.join(spec_tokens)}&quot;,</span>
+<span class="c1">#         f&#39;--model_prefix=&quot;cache_dir&quot; --vocab_size={vocab_sz} --model_type={model_type}&#39;]))</span>
+<span class="c1">#     raw_text_path.unlink()</span>
+<span class="c1">#     return cache_dir</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

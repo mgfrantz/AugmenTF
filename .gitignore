@@ -140,3 +140,4 @@ checklink/cookies.txt
 .gitconfig
 data
 test.sh
+dask-worker-space
